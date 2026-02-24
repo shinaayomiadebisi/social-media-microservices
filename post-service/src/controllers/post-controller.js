@@ -2,6 +2,13 @@ const Post = require("../models/POst");
 const logger = require("../utils/logger");
 const { validateCreatePost } = require("../utils/validation");
 
+async function invalidatePostCache(req, input) {
+  const keys = await req.redisClient.keys("posts:*");
+  if (keys.length > 0) {
+    req.redisClient.del(keys);
+  }
+}
+
 const createPost = async (req, res) => {
   logger.info("Create post endpoint hit...");
   try {
@@ -23,6 +30,7 @@ const createPost = async (req, res) => {
     });
 
     await newlyCreatedPost.save();
+    await invalidatePostCache(req, newlyCreatedPost._id.toString());
     logger.info("Post created successfully", newlyCreatedPost);
     res.status(201).json({
       success: true,
@@ -79,6 +87,27 @@ const getAllPosts = async (req, res) => {
 
 const getPost = async (req, res) => {
   try {
+    const postId = req.params.id;
+    const cacheKey = `post:${postId}`;
+    const cachedPost = await req.redisClient.get(cacheKey);
+
+    if (cachedPost) {
+      return res.json(JSON.parse(cachedPost));
+    }
+
+    const singlePOstDetailsById = await Post.findById(postId);
+    if (!singlePOstDetailsById) {
+      res.status(404).json({
+        success: false,
+        message: "Post not found!",
+      });
+    }
+
+    await req.redisClient.setex(
+      cachedPost,
+      3600,
+      JSON.stringify(singlePOstDetailsById),
+    );
   } catch (error) {
     logger.error("Error fetching post by ID", error);
     res.status(500).json({
