@@ -108,6 +108,8 @@ const getPost = async (req, res) => {
       3600,
       JSON.stringify(singlePOstDetailsById),
     );
+
+    res.json(singlePOstDetailsById);
   } catch (error) {
     logger.error("Error fetching post by ID", error);
     res.status(500).json({
@@ -128,4 +130,4 @@ const deletePost = async (req, res) => {
   }
 };
 
-module.exports = { createPost, getAllPosts };
+module.exports = { createPost, getAllPosts, getPost };
