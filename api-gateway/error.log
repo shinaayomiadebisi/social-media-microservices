@@ -1,0 +1,9 @@
+{"level":"error","message":"Error: getaddrinfo ENOTFOUND locahost\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","service":"api-gateway","timestamp":"2026-02-16T03:53:01.824Z"}
+{"level":"error","message":"Error: getaddrinfo ENOTFOUND locahost\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","service":"api-gateway","timestamp":"2026-02-16T03:53:14.811Z"}
+{"level":"error","message":"Error: getaddrinfo ENOTFOUND locahost\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","service":"api-gateway","timestamp":"2026-02-16T03:53:17.855Z"}
+{"level":"error","message":"Error: getaddrinfo ENOTFOUND locahost\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","service":"api-gateway","timestamp":"2026-02-16T03:54:09.386Z"}
+{"level":"error","message":"Error: getaddrinfo ENOTFOUND locahost\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","service":"api-gateway","timestamp":"2026-02-16T03:56:13.926Z"}
+{"level":"error","message":"Error: getaddrinfo ENOTFOUND locahost\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","service":"api-gateway","timestamp":"2026-02-16T03:56:30.472Z"}
+{"level":"error","message":"Error: getaddrinfo ENOTFOUND locahost\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","service":"api-gateway","timestamp":"2026-02-16T03:56:35.461Z"}
+{"level":"error","message":"Error: getaddrinfo ENOTFOUND locahost\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)","service":"api-gateway","timestamp":"2026-02-16T03:57:25.747Z"}
+{"level":"error","message":"AggregateError [ECONNREFUSED]: \n    at internalConnectMultiple (node:net:1134:18)\n    at afterConnectMultiple (node:net:1715:7)","service":"api-gateway","timestamp":"2026-02-16T03:57:38.461Z"}
