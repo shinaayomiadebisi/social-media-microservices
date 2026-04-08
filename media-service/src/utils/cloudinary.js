@@ -27,3 +27,4 @@ const uploadMediaToCloudinary = (file) => {
   })
 }
 
+module.exports = { uploadMediaToCloudinary }
