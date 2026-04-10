@@ -12,6 +12,7 @@ const uploadMedia = async(req, res) => {
     }
 
     const {originalName, mimeType, buffer} = req.file
+    const userId = req.user.userId
   } catch(e) {
 
   }
