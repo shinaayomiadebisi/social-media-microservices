@@ -39,7 +39,13 @@ const uploadMedia = async(req, res) => {
       message: 'Media upload is successfully'
     })
 
-  } catch(e) {
-
+  } catch(error) {
+      logger.error("Error deleting post", error);
+      res.status(500).json({
+        success: false,
+        message: "Error uploading media",
+      });
   }
 };
+
+module.exports = { uploadMedia }
