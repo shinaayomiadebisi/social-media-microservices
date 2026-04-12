@@ -1,7 +1,7 @@
 const express = require("express");
 const multer = require("multer");
 
-const {} = require("../controllers/media-controller");
+const { uploadMedia } = require("../controllers/media-controller");
 const { authenticateRequest } = require("../middleware/authMiddleware");
 const logger = require("../utils/logger");
 
