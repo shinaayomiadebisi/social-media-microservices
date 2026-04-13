@@ -15,4 +15,4 @@ const upload = multer({
   },
 }).single("file");
 
-router.post("/upload", authenticateRequest);
+router.post("/upload", authenticateRequest, (req, res, next) => {});
