@@ -38,5 +38,7 @@ router.post("/upload", authenticateRequest, (req, res, next) => {
         message: "No file found!",
       });
     }
+
+    next()
   });
-});
+}, uploadMedia);
