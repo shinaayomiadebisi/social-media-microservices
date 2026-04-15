@@ -42,3 +42,5 @@ router.post("/upload", authenticateRequest, (req, res, next) => {
     next()
   });
 }, uploadMedia);
+
+module.exports = router
