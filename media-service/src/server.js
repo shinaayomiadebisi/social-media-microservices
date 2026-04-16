@@ -4,3 +4,5 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const helmet = require('helmet')
 const mediaRoutes = require('./routes/media-routes')
+const errorHandler = require("./middleware/errorHandler");
+const logger = require("./utils/logger");
