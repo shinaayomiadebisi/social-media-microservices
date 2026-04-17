@@ -6,3 +6,8 @@ const helmet = require('helmet')
 const mediaRoutes = require('./routes/media-routes')
 const errorHandler = require("./middleware/errorHandler");
 const logger = require("./utils/logger");
+const express = require('express')
+
+const app = express()
+
+app.use(express.json)
