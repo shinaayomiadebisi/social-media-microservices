@@ -12,3 +12,8 @@ const app = express()
 
 app.use(express.json())
 const PORT = process.env.PORT || 3003
+// connect to mongodb
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => logger.info("Connected to mongodb"))
+  .catch((e) => logger.error("Mongo connection error", e));
