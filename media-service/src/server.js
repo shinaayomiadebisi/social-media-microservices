@@ -18,3 +18,6 @@ mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => logger.info("Connected to mongodb"))
   .catch((e) => logger.error("Mongo connection error", e));
+
+app.use(cors())
+app.use(helmet())
