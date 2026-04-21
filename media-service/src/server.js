@@ -55,3 +55,4 @@ app.use("/api/media/upload", sensitiveEndpointsLimiter);
 
 app.use("/api/media", mediaRoutes)
 
+app.use(errorHandler)
