@@ -6,7 +6,6 @@ const helmet = require('helmet')
 const mediaRoutes = require('./routes/media-routes')
 const errorHandler = require("./middleware/errorHandler");
 const logger = require("./utils/logger");
-const express = require('express')
 const { rateLimit } = require("express-rate-limit");
 const { RedisStore } = require("rate-limit-redis");
 const Redis = require("ioredis");
