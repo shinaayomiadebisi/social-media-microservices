@@ -14,10 +14,10 @@ const uploadMedia = async (req, res) => {
       });
     }
 
-    const { originalName, mimeType, buffer } = req.file;
+    const { originalname, mimetype, buffer } = req.file;
     const userId = req.user.userId;
 
-    logger.info(`File details: name=${originalName}, type=${mimeType}`);
+    logger.info(`File details: name=${originalName}, type=${mimetype}`);
     logger.info("Uploading to cloudinary starting...");
 
     const cloudinaryUploadResult = await uploadMediaToCloudinary(req.file);
