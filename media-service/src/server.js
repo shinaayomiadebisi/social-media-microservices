@@ -1,17 +1,17 @@
-require('dotenv').config()
-const express = require('express')
-const mongoose = require('mongoose')
-const cors = require('cors')
-const helmet = require('helmet')
-const mediaRoutes = require('./routes/media-routes')
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const helmet = require("helmet");
+const mediaRoutes = require("./routes/media-routes");
 const errorHandler = require("./middleware/errorHandler");
 const logger = require("./utils/logger");
 const { rateLimit } = require("express-rate-limit");
 const { RedisStore } = require("rate-limit-redis");
 const Redis = require("ioredis");
 
-const app = express()
-const PORT = process.env.PORT || 3003
+const app = express();
+const PORT = process.env.PORT || 3003;
 
 // connect to mongodb
 mongoose
@@ -21,9 +21,9 @@ mongoose
 
 const redisClient = new Redis(process.env.REDIS_URL);
 
-app.use(cors())
-app.use(helmet())
-app.use(express.json())
+app.use(cors());
+app.use(helmet());
+app.use(express.json());
 
 app.use((req, res, next) => {
   logger.info(`Received ${req.method} request to ${req.url}`);
@@ -52,12 +52,12 @@ const sensitiveEndpointsLimiter = rateLimit({
 // apply this sensitiveEndpointsLimiter to our routes
 app.use("/api/media/upload", sensitiveEndpointsLimiter);
 
-app.use("/api/media", mediaRoutes)
+app.use("/api/media", mediaRoutes);
 
-app.use(errorHandler)
+app.use(errorHandler);
 
 app.listen(PORT, () => {
-  logger.info(`Post service running on port ${PORT}`);
+  logger.info(`Media service running on port ${PORT}`);
 });
 
 // unhandled promise rejection
