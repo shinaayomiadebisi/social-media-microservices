@@ -12,3 +12,7 @@ brew services start rabbitmq
 # stops the locally running RabbitMQ node
 
 brew services stop rabbitmq
+
+npm install amqplib
+
+## Youtube link: [Youtube](https://www.youtube.com/watch?v=_f7h6xQXiLA)
