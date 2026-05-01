@@ -1,4 +1,4 @@
-const Post = require("../models/POst");
+const Post = require("../models/Post");
 const logger = require("../utils/logger");
 const { validateCreatePost } = require("../utils/validation");
 
