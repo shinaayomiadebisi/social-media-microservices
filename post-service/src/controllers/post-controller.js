@@ -144,7 +144,7 @@ const deletePost = async (req, res) => {
     logger.error("Error deleting post", error);
     res.status(500).json({
       success: false,
-      message: "Error fetching post",
+      message: "Error deleting post",
     });
   }
 };
