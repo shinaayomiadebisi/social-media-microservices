@@ -17,7 +17,7 @@ const uploadMedia = async (req, res) => {
     const { originalname, mimetype, buffer } = req.file;
     const userId = req.user.userId;
 
-    logger.info(`File details: name=${originalName}, type=${mimetype}`);
+    logger.info(`File details: name=${originalname}, type=${mimetype}`);
     logger.info("Uploading to cloudinary starting...");
 
     const cloudinaryUploadResult = await uploadMediaToCloudinary(req.file);
@@ -42,7 +42,7 @@ const uploadMedia = async (req, res) => {
       message: "Media upload is successfully",
     });
   } catch (error) {
-    logger.error("Error deleting media", error);
+    logger.error("Error uploading media", error);
     res.status(500).json({
       success: false,
       message: "Error uploading media",
@@ -50,4 +50,17 @@ const uploadMedia = async (req, res) => {
   }
 };
 
-module.exports = { uploadMedia };
+const getAllMedias = async (req, res) => {
+  try {
+    const result = await Media.find({});
+    res.json({ result });
+  } catch (error) {
+    logger.error("Error fetching medias", error);
+    res.status(500).json({
+      success: false,
+      message: "Error fetching medias",
+    });
+  }
+};
+
+module.exports = { uploadMedia, getAllMedias };
