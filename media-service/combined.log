@@ -78,3 +78,17 @@
 {"level":"info","message":"CLoudinary upload successfully. Public Id: - kksoeebtuscddew5kp7n","service":"media-service","timestamp":"2026-04-24T10:55:33.701Z"}
 {"level":"info","message":"Media service running on port 3003","service":"media-service","timestamp":"2026-04-28T12:00:58.277Z"}
 {"level":"info","message":"Connected to mongodb","service":"media-service","timestamp":"2026-04-28T12:01:00.380Z"}
+{"level":"info","message":"Media service running on port 3003","service":"media-service","timestamp":"2026-05-02T13:23:59.169Z"}
+{"level":"info","message":"Connected to mongodb","service":"media-service","timestamp":"2026-05-02T13:24:01.237Z"}
+{"level":"info","message":"Received GET request to /api/media/get","service":"media-service","timestamp":"2026-05-02T13:28:30.624Z"}
+{"level":"info","message":"Request body, undefined","service":"media-service","timestamp":"2026-05-02T13:28:30.626Z"}
+{"level":"info","message":"Received POST request to /api/media/upload","service":"media-service","timestamp":"2026-05-02T13:30:48.927Z"}
+{"level":"info","message":"Request body, undefined","service":"media-service","timestamp":"2026-05-02T13:30:48.928Z"}
+{"level":"info","message":"Starting media uploading","service":"media-service","timestamp":"2026-05-02T13:30:48.960Z"}
+{"level":"info","message":"File details: name=d39ec55d1cfdeeccecee6a4c110e706c.jpg, type=image/jpeg","service":"media-service","timestamp":"2026-05-02T13:30:48.962Z"}
+{"level":"info","message":"Uploading to cloudinary starting...","service":"media-service","timestamp":"2026-05-02T13:30:48.962Z"}
+{"level":"info","message":"CLoudinary upload successfully. Public Id: - sbx6vfeevovltpivn9y8","service":"media-service","timestamp":"2026-05-02T13:30:50.480Z"}
+{"level":"info","message":"Received GET request to /api/media/get","service":"media-service","timestamp":"2026-05-02T13:30:57.853Z"}
+{"level":"info","message":"Request body, undefined","service":"media-service","timestamp":"2026-05-02T13:30:57.854Z"}
+{"level":"info","message":"Media service running on port 3003","service":"media-service","timestamp":"2026-05-03T01:59:17.227Z"}
+{"level":"info","message":"Connected to mongodb","service":"media-service","timestamp":"2026-05-03T01:59:18.950Z"}
