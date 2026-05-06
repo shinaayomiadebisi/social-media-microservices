@@ -56,6 +56,11 @@ app.use("/api/media", mediaRoutes);
 
 app.use(errorHandler);
 
+async function startServer() {
+  try {
+  } catch (error) {}
+}
+
 app.listen(PORT, () => {
   logger.info(`Media service running on port ${PORT}`);
 });
