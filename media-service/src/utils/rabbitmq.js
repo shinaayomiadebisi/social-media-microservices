@@ -43,8 +43,11 @@ async function consumeEvent(routingKey, callback) {
     if (msg !== null) {
       const content = JSON.parse(msg.content.toString());
       callback(content);
+      channel.ack(msg);
     }
   });
+
+  logger.info(`Subscribed to event: ${routingKey}`);
 }
 
-module.exports = { connectToRabbitMQ, publishEvent };
+module.exports = { connectToRabbitMQ, publishEvent, consumeEvent };
