@@ -38,7 +38,7 @@ async function consumeEvent(routingKey, callback) {
   }
 
   const q = await channel.assertQueue("", { exclusive: true });
-  await channel.blindQueue(q.queue, EXCHANGE_NAME, routingKey);
+  await channel.bindQueue(q.queue, EXCHANGE_NAME, routingKey);
   channel.consume(q.queue, (msg) => {
     if (msg !== null) {
       const content = JSON.parse(msg.content.toString());
