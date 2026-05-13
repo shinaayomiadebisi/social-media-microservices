@@ -63,6 +63,7 @@ async function startServer() {
     await connectToRabbitMQ();
 
     // consume the events / subscribe to the events
+    await consumeEvent();
   } catch (e) {
     logger.error(e, "Failed to start search service");
     process.exit(1);
