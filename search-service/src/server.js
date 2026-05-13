@@ -9,6 +9,7 @@ const logger = require("./utils/logger");
 const { connectToRabbitMQ, consumeEvent } = require("./utils/rabbitmq");
 const { rateLimit } = require("express-rate-limit");
 const { RedisStore } = require("rate-limit-redis");
+const searchRoutes = require("./routes/search-routes");
 
 const app = express();
 const PORT = process.env.PORT || 3004;
@@ -53,4 +54,17 @@ const sensitiveEndpointsLimiter = rateLimit({
 // apply this sensitiveEndpointsLimiter to our routes
 // app.use("", sensitiveEndpointsLimiter);
 
-app.use();
+app.use("/api/search", searchRoutes);
+
+app.use(errorHandler);
+
+async function startServer() {
+  try {
+    await connectToRabbitMQ();
+
+    // consume the events / subscribe to the events
+  } catch (e) {
+    logger.error(e, "Failed to start search service");
+    process.exit(1);
+  }
+}
