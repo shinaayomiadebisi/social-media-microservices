@@ -10,6 +10,7 @@ const { connectToRabbitMQ, consumeEvent } = require("./utils/rabbitmq");
 const { rateLimit } = require("express-rate-limit");
 const { RedisStore } = require("rate-limit-redis");
 const searchRoutes = require("./routes/search-routes");
+const { handlePostCreated } = require("./eventHandlers/search-event-handler");
 
 const app = express();
 const PORT = process.env.PORT || 3004;
@@ -63,9 +64,12 @@ async function startServer() {
     await connectToRabbitMQ();
 
     // consume the events / subscribe to the events
-    await consumeEvent();
+    await consumeEvent("post.created", handlePostCreated);
+    await consumeEvent("post.deleted", handlePostCreated);
   } catch (e) {
     logger.error(e, "Failed to start search service");
     process.exit(1);
   }
 }
+
+startServer();
