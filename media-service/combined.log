@@ -164,3 +164,5 @@
 {"level":"info","message":"Subscribed to event: post.deleted","service":"media-service","timestamp":"2026-05-15T10:19:45.353Z"}
 {"level":"info","message":"Media service running on port 3003","service":"media-service","timestamp":"2026-05-15T10:19:45.355Z"}
 {"level":"info","message":"Connected to mongodb","service":"media-service","timestamp":"2026-05-15T10:19:46.824Z"}
+{"level":"info","message":"Processed deletion of media for post id 6a06f77c592cf02af652960c","service":"media-service","timestamp":"2026-05-18T09:51:27.969Z"}
+{"level":"info","message":"Processed deletion of media for post id 6a0ae198592cf02af6529613","service":"media-service","timestamp":"2026-05-18T09:54:10.433Z"}
