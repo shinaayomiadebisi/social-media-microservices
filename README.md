@@ -19,8 +19,8 @@ npm install amqplib
 ## After configuring docker compose file
 
 RUN
-docker compose build
-docker compose up
+docker-compose build
+docker-compose up
 
 # To checker the running docker service
 
