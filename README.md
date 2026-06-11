@@ -31,4 +31,4 @@ docker-compose ps
 
 docker-compose logs [service name][e.g api-gateway]
 
-## Youtube link: [Youtube](https://www.youtube.com/watch?v=_f7h6xQXiLA)
+### Youtube link: [Youtube](https://www.youtube.com/watch?v=_f7h6xQXiLA)
