@@ -4,7 +4,7 @@ const logger = require("../utils/logger");
 async function invalidateSearchCache(req, input) {
   const cachedKey = `search:${input}`;
   await req.redisClient.del(cachedKey);
-
+console.log()
   // const keys = await req.redisClient.keys("searches:*");
   // if (keys.length > 0) {
   //   req.redisClient.del(keys);
