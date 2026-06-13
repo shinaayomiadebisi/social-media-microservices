@@ -10,7 +10,7 @@ async function invalidateSearchCache(req, input) {
   //   req.redisClient.del(keys);
   // }
 }
-console.log()
+
 async function handlePostCreated(event) {
   try {
     const newSearchPost = new Search({
